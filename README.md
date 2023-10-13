@@ -1,9 +1,8 @@
 <p align='center'>
-  <img src='doc/logo.png' alt='Banner'>
-  <h1 align='center'>elasticsearch-reindex-stream</h1>
+  <img src='doc/logo.png' alt='Banner' width='128px'>
 </p>
 
-<div align='center'>
+# elasticsearch-reindex-stream
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/elasticsearch-reindex-stream?style=flat-square)
