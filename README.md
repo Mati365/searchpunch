@@ -45,10 +45,6 @@ yarn add @searchpunch/elastic-reindex-stream
 3. Autocomplete select inputs
 4. ... and in many many other places
 
-## Is it official Elasticsearch product?
-
-No
-
 ## Icons
 
 [Punch icons created by surang - Flaticon](https://www.flaticon.com/free-icons/punch)
