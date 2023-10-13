@@ -2,7 +2,7 @@
   "name": "@searchpunch/elastic-reindex-stream",
   "version": "1.0.0",
   "type": "module",
-  "repository": "https://github.com/Mati365/elasticsearch-reindex-stream",
+  "repository": "https://github.com/Mati365/searchpunch",
   "author": "Mateusz Baginski <cziken58@gmail.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",

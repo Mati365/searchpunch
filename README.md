@@ -2,14 +2,24 @@
   <img src='doc/logo.png' alt='Banner' width='128px'>
 </p>
 
-# elasticsearch-reindex-stream
+# searchpunch
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/elasticsearch-reindex-stream?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/mati365/elasticsearch-reindex-stream?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/searchpunch?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/mati365/searchpunch?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-0-downtime Elasticsearch (and OpenSearch) reindex functional utility. Automatically detect ES mapping modification and reindex modified records.
+Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is Searchpunch and punch this shit out!
+
+## What does it offer (aside from the cool name)?
+
+   1. not much functionality but doing its job well
+   2. 0-downtime reindexing and safe index surges
+   3. easy data synchronization between any data source (for example, MariaDB, PostgreSQL and any other database)
+   4. automatic detection of index changes and performing reindexes
+   5. bulk reindex of records
+   6. support of namespaces in index naming allowing to separate indexes into a cluster
+   7. automatic cleaning of unused indexes in the cluster
 
 ## Installation
 
