@@ -1,4 +1,9 @@
-# elasticsearch-reindex-stream
+<p align='center'>
+  <img src='doc/logo.png' alt='Banner'>
+  <h1 align='center'>elasticsearch-reindex-stream</h1>
+</p>
+
+<div align='center'>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/elasticsearch-reindex-stream?style=flat-square)
@@ -6,6 +11,12 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 0-downtime Elasticsearch (and OpenSearch) reindex functional utility. Automatically detect ES mapping modification and reindex modified records.
+
+## Installation
+
+```bash
+yarn install @searchpunch/elastic-reindex-stream
+```
 
 ## How index synchronization works?
 
@@ -22,10 +33,16 @@
 
 1. Building ecommerce shops with aggregated products
 2. Searching logs in dashboard
+3. Autocomplete select inputs
+4. ... and in many many other places
 
 ## Is it official Elasticsearch product?
 
 No
+
+## Icons
+
+[![Icon credits]("https://www.flaticon.com/free-icons/punch)](Punch icons created by surang - Flaticon)
 
 ## License
 
