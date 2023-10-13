@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  - push
+
+concurrency:
+  group: check
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Lint app and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile --production=false
+      - run: yarn lint
