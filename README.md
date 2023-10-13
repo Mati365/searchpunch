@@ -2,7 +2,7 @@
   <img src='doc/logo.png' alt='Banner' width='128px'>
 </p>
 
-# searchpunch
+# searchpunch 👊
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/searchpunch?style=flat-square)
@@ -11,7 +11,7 @@
 
 Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is Searchpunch and punch this shit out!
 
-## What does it offer (aside from the cool name)?
+**What does it offer (aside from the cool name)?**
 
    1. not much functionality but doing its job well
    2. 0-downtime reindexing and safe index surges
