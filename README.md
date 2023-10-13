@@ -14,7 +14,7 @@
 ## Installation
 
 ```bash
-yarn install @searchpunch/elastic-reindex-stream
+yarn add @searchpunch/elastic-reindex-stream
 ```
 
 ## How index synchronization works?
