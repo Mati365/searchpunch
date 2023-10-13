@@ -41,7 +41,7 @@ No
 
 ## Icons
 
-[![Icon credits]("https://www.flaticon.com/free-icons/punch)](Punch icons created by surang - Flaticon)
+[Punch icons created by surang - Flaticon](https://www.flaticon.com/free-icons/punch)
 
 ## License
 
