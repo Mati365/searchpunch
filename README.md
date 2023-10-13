@@ -9,7 +9,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/mati365/searchpunch?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is Searchpunch and punch this shit out!
+Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is **searchpunch** and punch this shit out!
 
 **What does it offer (aside from the cool name)?**
 
@@ -20,6 +20,7 @@ Tired of writing elasticsearch reindexing scripts? Are you constantly encounteri
    5. bulk reindex of records
    6. support of namespaces in index naming allowing to separate indexes into a cluster
    7. automatic cleaning of unused indexes in the cluster
+   8. fully typed error handling using monadic functional approach
 
 ## Installation
 
