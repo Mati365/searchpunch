@@ -7,7 +7,7 @@
   "license": "MIT",
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "prettier --write --config ./prettier.config.mjs --ignore-unknown",
+      "prettier --write --config ./.prettierrc.yml --ignore-unknown",
       "eslint --fix --quiet"
     ]
   },

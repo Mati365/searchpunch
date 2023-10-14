@@ -25,5 +25,9 @@
   "files": [
     "dist/",
     "src/"
-  ]
+  ],
+  "dependencies": {
+    "elastic-builder": "^2.22.0",
+    "effect": "^2.0.0-next.48"
+  }
 }

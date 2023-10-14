@@ -33,10 +33,3 @@ rules:
         'multilineDetection': 'brackets',
       },
     ]
-overrides:
-  [
-    {
-      'files': ['*.ts', '*.mts', '*.cts', '*.tsx'],
-      'rules': { '@typescript-eslint/explicit-function-return-type': 'error' },
-    },
-  ]

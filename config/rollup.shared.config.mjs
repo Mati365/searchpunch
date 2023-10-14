@@ -24,6 +24,7 @@ export const createPackageRollupConfig = () => ({
       tsconfigOverride: {
         compilerOptions: {
           module: 'ESNext',
+          moduleResolution: 'node',
           declaration: true,
         },
         include: ['src/'],
