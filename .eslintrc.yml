@@ -20,6 +20,7 @@ rules:
   import/no-default-export: 2
   import/no-extraneous-dependencies: 0
   no-console: warn
+  '@typescript-eslint/explicit-function-return-type': off
   '@typescript-eslint/strict-boolean-expressions': off
   '@typescript-eslint/indent': off
   '@typescript-eslint/consistent-type-definitions': ['error', 'type']
@@ -32,3 +33,10 @@ rules:
         'multilineDetection': 'brackets',
       },
     ]
+overrides:
+  [
+    {
+      'files': ['*.ts', '*.mts', '*.cts', '*.tsx'],
+      'rules': { '@typescript-eslint/explicit-function-return-type': 'error' },
+    },
+  ]

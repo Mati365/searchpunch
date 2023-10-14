@@ -15,6 +15,6 @@
     "noImplicitAny": true,
     "allowJs": true
   },
-  "include": ["./src"],
+  "include": ["packages/", "config/"],
   "exclude": ["node_modules/"]
 }

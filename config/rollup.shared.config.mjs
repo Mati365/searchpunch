@@ -1,9 +1,8 @@
-/* eslint-disable import/no-default-export */
 import del from 'rollup-plugin-delete';
 import typescript from 'rollup-plugin-typescript2';
 import resolve from '@rollup/plugin-node-resolve';
 
-export default {
+export const createPackageRollupConfig = () => ({
   input: 'src/index.ts',
   external: [/node_modules/],
   output: [
@@ -35,4 +34,4 @@ export default {
       moduleDirectories: ['node_modules'],
     }),
   ],
-};
+});

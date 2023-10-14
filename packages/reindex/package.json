@@ -1,0 +1,27 @@
+{
+  "name": "@searchpunch/reindex",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "typings": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/esm/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "npx rollup --config rollup.config.mjs",
+    "lint": "npx eslint --max-warnings=0 src/"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ]
+}

@@ -25,7 +25,7 @@ Tired of writing elasticsearch reindexing scripts? Are you constantly encounteri
 ## Installation
 
 ```bash
-yarn add @searchpunch/elastic-reindex-stream
+yarn add @searchpunch/reindex
 ```
 
 ## How index synchronization works?

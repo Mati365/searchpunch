@@ -3,5 +3,4 @@ dist
 coverage
 .turbo
 prettier.config.mjs
-rollup.config.mjs
 .commitlintrc.mjs
