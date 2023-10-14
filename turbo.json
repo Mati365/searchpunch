@@ -6,11 +6,11 @@
       "outputs": ["dist/**"]
     },
     "lint": {
-      "dependsOn": ["build"],
+      "dependsOn": [],
       "outputs": []
     },
     "test": {
-      "dependsOn": ["lint"],
+      "dependsOn": [],
       "outputs": [],
       "inputs": ["src/**/*.test.tsx", "src/**/*.test.ts"],
       "cache": false
