@@ -1,11 +1,11 @@
 # searchpunch 👊
 
-<img src='doc/logo.png' alt='Banner' width='220px' align="right" >
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mati365/searchpunch?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/mati365/searchpunch?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+<img src='doc/logo.png' alt='Banner' width='220px' align="right" >
 
 Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is **searchpunch** and punch this shit out!
 
