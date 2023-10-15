@@ -19,6 +19,13 @@ Tired of writing elasticsearch reindex scripts? Are you constantly encountering 
 6. group indices into namespaces
 7. fully typed error handling using Either monad
 8. failure tolerance, automatic rollback if index does not match healthy criteria 
+9. CLI tools
+    
+## Work in Progress 🚧
+
+- [ ] 🚧 Effect-ts Elasticsearch layer
+- [ ] 🚧 Synchronization of Elasticsearch indices
+- [ ] 🚧 CLI utilities 
 
 ## Installation 🚀
 
