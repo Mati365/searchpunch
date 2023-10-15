@@ -12,7 +12,7 @@ Tired of writing elasticsearch reindexing scripts? Are you constantly encounteri
 ## What does it offer? ⭐
 
 1.  0-downtime reindexing
-2.  automatic removing unused indices based on IaC namespace definition ♻
+2.  automatic removing unused indices
 3.  synchronization of data between any database using async generators 
 4.  automatic detection of index settings / mappings modification and reindex modified inndices
 5.  bulk reindex of records
