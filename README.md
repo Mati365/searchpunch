@@ -13,14 +13,14 @@ Tired of writing elasticsearch reindexing scripts? Are you constantly encounteri
 
 **What does it offer (aside from the cool name)?**
 
-   1. not much functionality but doing its job well
-   2. 0-downtime reindexing and safe index surges
-   3. easy data synchronization between any data source (for example, MariaDB, PostgreSQL and any other database)
-   4. automatic detection of index changes and performing reindexes
-   5. bulk reindex of records
-   6. support of namespaces in index naming allowing to separate indexes into a cluster
-   7. automatic cleaning of unused indexes in the cluster
-   8. fully typed error handling using monadic functional approach
+1.  not much functionality but doing its job well
+2.  0-downtime reindexing and safe index surges
+3.  easy data synchronization between any data source (for example, MariaDB, PostgreSQL and any other database)
+4.  automatic detection of index changes and performing reindexes
+5.  bulk reindex of records
+6.  support of namespaces in index naming allowing to separate indexes into a cluster
+7.  automatic cleaning of unused indexes in the cluster
+8.  fully typed error handling using monadic functional approach
 
 ## Installation
 
@@ -45,10 +45,6 @@ yarn add @searchpunch/reindex
 2. Searching logs in dashboard
 3. Autocomplete select inputs
 4. ... and in many many other places
-
-## Icons
-
-[Punch icons created by surang - Flaticon](https://www.flaticon.com/free-icons/punch)
 
 ## License
 
