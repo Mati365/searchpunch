@@ -1,18 +1,14 @@
-import path from 'node:path';
-import { fileURLToPath } from 'url';
-
 export const createJestConfig = ({ rootDir }) => ({
   rootDir,
-  preset: 'ts-jest',
   resetMocks: true,
-  setupFilesAfterEnv: [
-    path.resolve(fileURLToPath(import.meta.url), '../jest.setup.mjs'),
-  ],
+  setupFilesAfterEnv: ['jest-extended'],
   testPathIgnorePatterns: ['node_modules'],
   moduleFileExtensions: ['ts', 'js'],
+  testEnvironment: 'node',
   testRegex: '.test\\.ts$',
+  transformIgnorePatterns: ['<rootDir>/node_modules/', '.mjs'],
   transform: {
-    '^.+\\.ts$': ['ts-jest'],
+    '^.+\\.ts$': ['@swc/jest'],
   },
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],

@@ -27,7 +27,8 @@
     "src/"
   ],
   "dependencies": {
-    "elastic-builder": "^2.22.0",
-    "effect": "^2.0.0-next.48"
+    "@elastic/elasticsearch": "^8.10.0",
+    "effect": "^2.0.0-next.48",
+    "elastic-builder": "^2.22.0"
   }
 }

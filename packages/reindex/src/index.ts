@@ -1,1 +1,1 @@
-export * from './create-es-index-class';
+export * from './client';

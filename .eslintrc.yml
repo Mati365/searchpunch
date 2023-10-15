@@ -20,6 +20,8 @@ rules:
   import/no-default-export: 2
   import/no-extraneous-dependencies: 0
   no-console: warn
+  yield-star-spacing: ['error', 'after']
+  generator-star-spacing: ['error', 'after']
   '@typescript-eslint/explicit-function-return-type': off
   '@typescript-eslint/strict-boolean-expressions': off
   '@typescript-eslint/indent': off

@@ -17,7 +17,7 @@ Tired of writing elasticsearch reindex scripts? Are you constantly encountering 
 4. automatic detection of index settings / mappings modification and reindex modified indices
 5. bulk reindex of records
 6. group indices into namespaces
-7. fully typed error handling using Either error handling
+7. fully typed error handling using Either monad
 
 ## Installation 🚀
 
