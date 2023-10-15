@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src='doc/logo.png' alt='Banner' width='128px'>
+  <img src='doc/logo.png' alt='Banner' width='256px'>
 </p>
 
 # searchpunch 👊
