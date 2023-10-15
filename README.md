@@ -7,17 +7,17 @@
 
 <img src='doc/logo.png' alt='Banner' width='220px' align="right" >
 
-Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is **searchpunch** and punch this shit out!
+Tired of writing elasticsearch reindex scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is **searchpunch** and punch this shit out!
 
 ## What does it offer? ⭐
 
-1.  0-downtime reindexing
-2.  automatic removing unused indices
-3.  synchronization of data between any database using async generators 
-4.  automatic detection of index settings / mappings modification and reindex modified inndices
-5.  bulk reindex of records
-6.  group indices into namespaces 
-8.  fully typed error handling using Either error handling
+1. 0-downtime reindex
+2. automatic removing unused indices
+3. synchronization of data between any database using async generators
+4. automatic detection of index settings / mappings modification and reindex modified indices
+5. bulk reindex of records
+6. group indices into namespaces
+7. fully typed error handling using Either error handling
 
 ## Installation 🚀
 
@@ -25,7 +25,7 @@ Tired of writing elasticsearch reindexing scripts? Are you constantly encounteri
 yarn add @searchpunch/reindex
 ```
 
-## How index synchronization works? 🛠️  
+## How index synchronization works? 🛠️
 
 1. Load current mapping schema into memory
 2. Check if specified index exists in ElasticSearch
