@@ -9,7 +9,7 @@
 
 Tired of writing elasticsearch reindexing scripts? Are you constantly encountering data synchronization problems between the database and elasticsearch? Are you crying about the lack of namespaces in the organization of indexes in your cluster? Nothing lost! Here is **searchpunch** and punch this shit out!
 
-## What does it offer (aside from the cool name)? ⭐
+## What does it offer? ⭐
 
 1.  0-downtime reindexing
 2.  automatic removing unused indices based on IaC namespace definition ♻
