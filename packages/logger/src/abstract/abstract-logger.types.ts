@@ -7,12 +7,12 @@ export type AbstractLoggerLogOptions = {
   level: AbstractLoggerLevel;
 };
 
-export type AbstractLogFn = (message: string) => void;
+export type AbstractLogFn = (message: any) => void;
 
 export abstract class AbstractLogger
   implements Record<AbstractLoggerLevel, AbstractLogFn>
 {
-  constructor(readonly prefix: string) {}
+  constructor(readonly scope: string) {}
 
   abstract log(level: AbstractLoggerLevel): AbstractLogFn;
 

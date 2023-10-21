@@ -1,4 +1,6 @@
 import pino, { type Logger } from 'pino';
+import pretty from 'pino-pretty';
+
 import { AbstractLogger, type AbstractLoggerLevel } from '../abstract';
 
 export class PinoLogger extends AbstractLogger {
@@ -7,9 +9,14 @@ export class PinoLogger extends AbstractLogger {
   constructor(prefix: string) {
     super(prefix);
 
-    this.logger = pino({
-      msgPrefix: prefix,
-    });
+    this.logger = pino(
+      {
+        msgPrefix: prefix,
+      },
+      pretty({
+        colorize: true,
+      }),
+    );
   }
 
   log(level: AbstractLoggerLevel) {

@@ -1,5 +1,5 @@
-import { pipe } from 'fp-ts/function';
 import * as TE from 'fp-ts/TaskEither';
+import { pipe } from 'fp-ts/function';
 
 export const tapTaskEither =
   <E, A>(onRight: (data: A) => void, onLeft?: (error: E) => void) =>

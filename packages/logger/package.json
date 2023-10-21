@@ -5,6 +5,7 @@
   "private": false,
   "license": "MIT",
   "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
   "types": "./dist/cjs/index.d.ts",
   "exports": {
     ".": {
@@ -31,13 +32,15 @@
     "src/"
   ],
   "dependencies": {
-    "@searchpunch/core": "*",
     "@elastic/elasticsearch": "^8.10.0",
+    "@searchpunch/core": "*",
     "elastic-builder": "^2.22.0",
     "fp-ts": "^2.16.1",
-    "pino": "^8.16.0"
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.3"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "devDependencies": {}
 }

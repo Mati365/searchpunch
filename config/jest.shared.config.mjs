@@ -1,6 +1,7 @@
 export const createJestConfig = ({ rootDir }) => ({
   rootDir,
   resetMocks: true,
+  extensionsToTreatAsEsm: ['.ts'],
   setupFilesAfterEnv: ['jest-extended'],
   testPathIgnorePatterns: ['node_modules'],
   moduleFileExtensions: ['ts', 'js'],
@@ -8,7 +9,7 @@ export const createJestConfig = ({ rootDir }) => ({
   testRegex: '.test\\.ts$',
   transformIgnorePatterns: ['<rootDir>/node_modules/', '.mjs'],
   transform: {
-    '^.+\\.ts$': ['@swc/jest'],
+    '^.+\\.ts$': ['ts-jest', { useESM: true }],
   },
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/**/*.ts'],

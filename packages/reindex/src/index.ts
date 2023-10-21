@@ -1,1 +1,1 @@
-export * from './es-monadic-client';
+export * from './+internal';
