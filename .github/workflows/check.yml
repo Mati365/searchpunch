@@ -30,14 +30,14 @@ jobs:
           restore-keys: |
             turbo-${{ github.job }}-${{ github.ref_name }}
 
+      - name: Build files
+        run: yarn build
+
       - name: Lint files
         run: yarn lint
 
       - name: Test files
         run: yarn test
-
-      - name: Build files
-        run: yarn build
 
       - name: Check types
         run: yarn check:types
