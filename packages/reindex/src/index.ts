@@ -1,1 +1,1 @@
-export * from './es-monadic-decorator';
+export * from './es-monadic-client';

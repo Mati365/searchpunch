@@ -10,7 +10,7 @@ export type EsMonadicDecoratorOptions = {
  * EsMonadicDecorator is wrapper over default ES client that
  * wraps every required by framework method in TaskEither.
  */
-export class EsMonadicDecorator {
+export class EsMonadicClient {
   private readonly client: es.Client;
 
   private readonly logger: AbstractLogger;
