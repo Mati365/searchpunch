@@ -11,11 +11,9 @@ export class PinoLogger extends AbstractLogger {
 
     this.logger = pino(
       {
-        msgPrefix: prefix,
+        msgPrefix: `[${prefix}] `,
       },
-      pretty({
-        colorize: true,
-      }),
+      pretty(),
     );
   }
 
