@@ -1,10 +1,10 @@
-import del from 'rollup-plugin-delete';
 import typescript from 'rollup-plugin-typescript2';
 import resolve from '@rollup/plugin-node-resolve';
 
 export const createPackageRollupConfig = () => ({
   input: 'src/index.ts',
   external: [/node_modules/],
+  cache: false,
   output: [
     {
       file: './dist/cjs/index.js',
@@ -16,14 +16,11 @@ export const createPackageRollupConfig = () => ({
     },
   ],
   plugins: [
-    del({
-      targets: 'dist/',
-    }),
     typescript({
       tsconfig: './tsconfig.json',
       tsconfigOverride: {
         compilerOptions: {
-          module: 'ESNext',
+          module: 'ES2022',
           moduleResolution: 'node',
           declaration: true,
         },

@@ -1,5 +1,5 @@
 {
-  "name": "@searchpunch/reindex",
+  "name": "@searchpunch/logger",
   "version": "1.0.2",
   "type": "module",
   "private": false,
@@ -31,11 +31,11 @@
     "src/"
   ],
   "dependencies": {
+    "@searchpunch/core": "*",
     "@elastic/elasticsearch": "^8.10.0",
     "elastic-builder": "^2.22.0",
     "fp-ts": "^2.16.1",
-    "@searchpunch/core": "*",
-    "@searchpunch/logger": "*"
+    "pino": "^8.16.0"
   },
   "publishConfig": {
     "access": "public"

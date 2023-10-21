@@ -28,7 +28,10 @@ jobs:
           path: .turbo
           key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
-            turbo-${{ github.job }}-${{ github.ref_name }}-
+            turbo-${{ github.job }}-${{ github.ref_name }}
+
+      - name: Check types
+        run: yarn check:types
 
       - name: Lint files
         run: yarn lint

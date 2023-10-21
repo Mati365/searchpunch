@@ -16,11 +16,13 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "NODE_ENV=development npx turbo run dev",
     "build": "npx turbo run build",
     "lint": "npx turbo run lint",
     "test": "npx turbo run test",
     "prepare": "npx husky install",
-    "publish": "yarn build && npx changeset && npx changeset version && npx changeset publish"
+    "publish": "yarn build && npx changeset && npx changeset version && npx changeset publish",
+    "check:types": "npx turbo check:types --parallel"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
@@ -45,7 +47,6 @@
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "rollup": "^4.0.2",
-    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "tslib": "^2.6.2",
     "turbo": "^1.10.15",
