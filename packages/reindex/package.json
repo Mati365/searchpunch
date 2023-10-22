@@ -33,12 +33,16 @@
   ],
   "dependencies": {
     "@elastic/elasticsearch": "^8.10.0",
+    "@searchpunch/core": "*",
+    "@searchpunch/logger": "*",
     "elastic-builder": "^2.22.0",
     "fp-ts": "^2.16.1",
-    "@searchpunch/core": "*",
-    "@searchpunch/logger": "*"
+    "object-hash": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@types/object-hash": "^3.0.5"
   }
 }

@@ -7,6 +7,7 @@ import type * as es from '@elastic/elasticsearch';
 import { PinoLogger, type AbstractLogger } from '@searchpunch/logger';
 import {
   createIndexNameWithTimestamp,
+  createIndexSchemaWithMagicMeta,
   type EsMonadicClient,
 } from './+internal';
 
@@ -93,7 +94,7 @@ export class EsIndex extends ValueObject<EsIndexProps> {
 
   private readonly createTmpIndex = () =>
     this.client.index.create({
-      ...this.schema,
+      ...createIndexSchemaWithMagicMeta(this.schema),
       index: createIndexNameWithTimestamp(this.indexName),
     });
 }
