@@ -1,20 +1,16 @@
 import { TaggedError } from '@searchpunch/core';
 
-export class EsUnableSetAliasError extends TaggedError {
-  readonly tag = 'EsUnableSetAliasError';
-}
+export class EsUnableSetAliasError extends TaggedError.ofLiteral(
+  'EsUnableSetAlias',
+) {}
 
-export class EsNotFoundError extends TaggedError {
-  readonly tag = 'EsNotFoundError';
-}
+export class EsNotFoundError extends TaggedError.ofLiteral('EsNotFound') {}
 
-export class EsConnectionRefused extends TaggedError {
-  readonly tag = 'EsConnectionRefused';
-}
+export class EsConnectionRefused extends TaggedError.ofLiteral(
+  'EsConnectionRefused',
+) {}
 
-export class EsInternalError extends TaggedError {
-  readonly tag = 'EsInternalError';
-}
+export class EsInternalError extends TaggedError.ofLiteral('EsInternal') {}
 
 export type EsTaggedError =
   | EsConnectionRefused

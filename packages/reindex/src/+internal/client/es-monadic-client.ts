@@ -1,6 +1,8 @@
 import { pipe } from 'fp-ts/function';
 import * as es from '@elastic/elasticsearch';
+
 import { PinoLogger, type AbstractLogger } from '@searchpunch/logger';
+import { getFirstObjKeyValue } from '@searchpunch/core';
 
 import type { EsDocId } from './es-monadic-client.types';
 
@@ -37,6 +39,50 @@ export class EsMonadicClient {
       ...options,
       client: new es.Client(esConnectionOptions),
     });
+
+  readonly index = {
+    getMapping: (index: string) =>
+      pipe(async () => {
+        const response = await this.rawClient.indices.getMapping({
+          index,
+        });
+
+        return getFirstObjKeyValue(response.body).mappings;
+      }, tryEsTask(EsNotFoundError)),
+
+    delete: (names: string[]) =>
+      pipe(
+        async () =>
+          this.rawClient.indices.delete({
+            index: names,
+          }),
+        tryEsTask(),
+        this.logger.fp.logTaskEither({
+          onBefore: () => `Trying to delete indices: ${names.join(', ')}!`,
+          onLeft: () =>
+            `Cannot delete indices with names: ${names.join(', ')}!`,
+          onRight: () =>
+            `Indices with names ${names.join(', ')} has been deleted!`,
+        }),
+      ),
+
+    create: (dto: es.estypes.IndicesCreateRequest) =>
+      pipe(
+        async () => {
+          await this.rawClient.indices.create(dto);
+
+          return {
+            index: dto.index,
+          };
+        },
+        tryEsTask(),
+        this.logger.fp.logTaskEither({
+          onBefore: () => `Trying to create index with name "${dto.index}"!`,
+          onLeft: () => `Cannot create index with name "${dto.index}"!`,
+          onRight: () => `Index with name "${dto.index}" has been created!`,
+        }),
+      ),
+  };
 
   readonly record = {
     get: ({ id, index }: AttrWithEsIndex<{ id: EsDocId }>) =>
@@ -102,9 +148,9 @@ export class EsMonadicClient {
           this.rawClient.indices.existsAlias({
             name,
           }),
-        tryEsTask(),
+        tryEsTask(EsNotFoundError),
         this.logger.fp.logTaskEitherError(
-          () => `Cannot check if "${name}" index exists!"`,
+          () => `Cannot check if "${name}" index exists!`,
         ),
       ),
   };

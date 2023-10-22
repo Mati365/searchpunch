@@ -9,7 +9,9 @@ import {
 } from './es-monadic-client.error';
 
 export const tryEsTask =
-  <TC extends TaggedError>(TagClass?: new (originalStack?: string) => TC) =>
+  <TC extends TaggedError<any>>(
+    TagClass?: new (originalStack?: string) => TC,
+  ) =>
   <R>(
     task: T.Task<R>,
   ): TE.TaskEither<EsConnectionRefused | EsInternalError | TC, R> =>
