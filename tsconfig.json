@@ -15,6 +15,6 @@
     "noImplicitAny": true,
     "allowJs": true
   },
-  "include": ["packages/", "config/"],
+  "include": ["packages/**/*.ts", "config/**/*.ts"],
   "exclude": ["node_modules/"]
 }

@@ -32,17 +32,17 @@
     "src/"
   ],
   "dependencies": {
-    "@elastic/elasticsearch": "^8.10.0",
+    "@elastic/elasticsearch": "^8.12.1",
     "@searchpunch/core": "*",
     "@searchpunch/logger": "*",
-    "elastic-builder": "^2.22.0",
-    "fp-ts": "^2.16.1",
+    "elastic-builder": "^2.24.0",
+    "fp-ts": "^2.16.2",
     "object-hash": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "devDependencies": {
-    "@types/object-hash": "^3.0.5"
+    "@types/object-hash": "^3.0.6"
   }
 }

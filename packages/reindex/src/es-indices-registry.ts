@@ -10,7 +10,7 @@ export class EsIndicesRegistry extends ValueObject<EsIndicesRegistryProps> {
     return this.props.indices;
   }
 
-  register = (index: EsIndex): EsIndicesRegistry =>
+  register = (index: EsIndex): this =>
     this.extend({
       indices: [...this.indices, index],
     });

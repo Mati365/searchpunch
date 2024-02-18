@@ -22,6 +22,7 @@ rules:
   no-console: warn
   yield-star-spacing: ['error', 'after']
   generator-star-spacing: ['error', 'after']
+  '@typescript-eslint/no-unsafe-argument': off
   '@typescript-eslint/explicit-function-return-type': off
   '@typescript-eslint/strict-boolean-expressions': off
   '@typescript-eslint/indent': off

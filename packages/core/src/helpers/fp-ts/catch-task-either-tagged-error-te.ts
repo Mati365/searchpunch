@@ -21,4 +21,4 @@ export const catchTaskEitherTagErrorTE =
 
         return TE.left(error);
       }, TE.of),
-    ) as TE.TaskEither<E | E2, A | B>;
+    ) as TE.TaskEither<Exclude<E, TaggedError<T>> | E2, A | B>;

@@ -9,7 +9,7 @@ import {
 } from './es-monadic-client.error';
 
 export const tryEsTask =
-  <TC extends TaggedError<any>>(
+  <TC extends TaggedError<any> = EsInternalError>(
     TagClass?: new (originalStack?: string) => TC,
   ) =>
   <R>(
