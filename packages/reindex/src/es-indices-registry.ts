@@ -1,8 +1,8 @@
 import { ValueObject } from '@searchpunch/core';
-import type { EsIndex } from './es-index';
+import type { EsIndex } from './es-index/es-index';
 
 type EsIndicesRegistryProps = {
-  indices: EsIndex[];
+  indices: Array<EsIndex<any>>;
 };
 
 export class EsIndicesRegistry extends ValueObject<EsIndicesRegistryProps> {
@@ -10,7 +10,7 @@ export class EsIndicesRegistry extends ValueObject<EsIndicesRegistryProps> {
     return this.props.indices;
   }
 
-  register = (index: EsIndex): this =>
+  register = (index: EsIndex<any>): this =>
     this.extend({
       indices: [...this.indices, index],
     });

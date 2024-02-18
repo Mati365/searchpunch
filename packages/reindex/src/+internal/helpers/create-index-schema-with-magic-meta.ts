@@ -21,3 +21,15 @@ export const createIndexSchemaWithMagicMeta = <S extends { mappings?: object }>(
     ...schema.mappings,
   },
 });
+
+export const getIndexSchemaMagicMeta = (
+  mappings: any,
+): EsIndexMagicMeta | null => {
+  const maybeMappings = mappings?._meta;
+
+  if (maybeMappings?.tag === MAGIC_ES_SCHEMA_TAG) {
+    return maybeMappings;
+  }
+
+  return null;
+};

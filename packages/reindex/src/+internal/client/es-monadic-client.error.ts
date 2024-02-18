@@ -6,6 +6,10 @@ export class EsUnableSetAliasError extends TaggedError.ofLiteral(
 
 export class EsNotFoundError extends TaggedError.ofLiteral('EsNotFound') {}
 
+export class EsBulkReindexError extends TaggedError.ofLiteral(
+  'EsCannotBulkReindex',
+) {}
+
 export class EsConnectionRefused extends TaggedError.ofLiteral(
   'EsConnectionRefused',
 ) {}
@@ -16,4 +20,5 @@ export type EsTaggedError =
   | EsConnectionRefused
   | EsUnableSetAliasError
   | EsNotFoundError
+  | EsBulkReindexError
   | EsInternalError;

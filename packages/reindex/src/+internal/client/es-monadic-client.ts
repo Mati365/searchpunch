@@ -1,18 +1,20 @@
 import { pipe } from 'fp-ts/function';
 import * as es from '@elastic/elasticsearch';
+import * as esb from 'elastic-builder';
 
 import { PinoLogger, type AbstractLogger } from '@searchpunch/logger';
-import { getFirstObjKeyValue } from '@searchpunch/core';
 
-import type { EsDocId } from './es-monadic-client.types';
+import type { ID } from '@searchpunch/core';
+import type { EsDoc } from './es-monadic-client.types';
 
 import { tryEsTask } from './try-es-task';
 import {
+  EsBulkReindexError,
   EsNotFoundError,
   EsUnableSetAliasError,
 } from './es-monadic-client.error';
 
-type AttrWithEsIndex<F = unknown> = F & {
+export type AttrWithEsIndex<F = unknown> = F & {
   index: string;
 };
 
@@ -28,7 +30,7 @@ export class EsMonadicClient {
 
   constructor(options: EsMonadicClientOptions) {
     this.rawClient = options.client;
-    this.logger = options.logger ?? new PinoLogger('EsMonadicDecorator');
+    this.logger = options.logger ?? new PinoLogger('EsMonadicClient');
   }
 
   static ofConnection = (
@@ -47,7 +49,7 @@ export class EsMonadicClient {
           index,
         });
 
-        return getFirstObjKeyValue(response.body).mappings;
+        return response.body.mappings;
       }, tryEsTask(EsNotFoundError)),
 
     delete: (names: string[]) =>
@@ -84,8 +86,33 @@ export class EsMonadicClient {
       ),
   };
 
+  readonly reindex = {
+    bulk: <Doc extends EsDoc<unknown>>({
+      index,
+      docs,
+    }: AttrWithEsIndex<{ docs: Doc[] }>) =>
+      pipe(
+        async () => {
+          await this.rawClient.bulk({
+            refresh: true,
+            body: docs.flatMap(({ _id, ...doc }) => [
+              {
+                index: {
+                  _index: index,
+                  _id: _id.toString(),
+                },
+              },
+              doc,
+            ]),
+          });
+        },
+        tryEsTask(EsBulkReindexError),
+        this.logger.fp.logTaskEitherError(() => 'Cannot bulk reindex records!'),
+      ),
+  };
+
   readonly record = {
-    get: ({ id, index }: AttrWithEsIndex<{ id: EsDocId }>) =>
+    get: ({ id, index }: AttrWithEsIndex<{ id: ID }>) =>
       pipe(
         async () => {
           const response = await this.rawClient.get({
@@ -99,7 +126,7 @@ export class EsMonadicClient {
         this.logger.fp.logTaskEitherError(() => `Record with ${id} not found!`),
       ),
 
-    delete: ({ id, index }: AttrWithEsIndex<{ id: EsDocId }>) =>
+    delete: ({ id, index }: AttrWithEsIndex<{ id: ID }>) =>
       pipe(
         async () =>
           this.rawClient.delete({
@@ -108,6 +135,32 @@ export class EsMonadicClient {
           }),
         tryEsTask(),
         this.logger.fp.logTaskEitherError(() => `Record with ${id} not found!`),
+      ),
+
+    deleteByIds: ({ ids, index }: AttrWithEsIndex<{ ids: ID[] }>) =>
+      pipe(
+        async () => {
+          if (!ids.length) {
+            return;
+          }
+
+          await this.rawClient.deleteByQuery({
+            index,
+            body: esb
+              .requestBodySearch()
+              .query(
+                esb.termsQuery(
+                  'id',
+                  ids.map(id => id.toString()),
+                ),
+              )
+              .toJSON(),
+          });
+        },
+        tryEsTask(),
+        this.logger.fp.logTaskEitherError(
+          () => `Cannot delete records ${ids.join(', ')}!`,
+        ),
       ),
   };
 

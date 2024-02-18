@@ -1,7 +1,5 @@
 export abstract class ValueObject<T> {
-  constructor(readonly props: T) {}
-
-  static of: <A>(props: A) => ValueObject<A>;
+  constructor(readonly props: Readonly<T>) {}
 
   unwrap() {
     return this.props;
